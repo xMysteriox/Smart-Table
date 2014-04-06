@@ -96,7 +96,7 @@
                 restrict: 'C',
                 require: '^smartTable',
                 link: function (scope, element, attr, ctrl) {
-                    element.bind('click', function () {
+                    element.find('.sort').first().bind('click', function () {
                         scope.$apply(function () {
                             ctrl.sortBy(scope.column);
                         });

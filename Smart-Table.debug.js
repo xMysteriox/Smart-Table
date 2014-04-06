@@ -149,7 +149,7 @@
                 restrict: 'C',
                 require: '^smartTable',
                 link: function (scope, element, attr, ctrl) {
-                    element.bind('click', function () {
+                    element.find('.sort').first().bind('click', function () {
                         scope.$apply(function () {
                             ctrl.sortBy(scope.column);
                         });
@@ -622,7 +622,7 @@ angular.module("partials/defaultCell.html", []).run(["$templateCache", function(
 
 angular.module("partials/defaultHeader.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("partials/defaultHeader.html",
-    "<span class=\"header-content\" ng-class=\"{'sort-ascent':column.reverse==false,'sort-descent':column.reverse==true}\">{{column.label}}</span>");
+    "<span class=\"header-content .sort\" ng-class=\"{'sort-ascent':column.reverse==false,'sort-descent':column.reverse==true}\">{{column.label}}</span>");
 }]);
 
 angular.module("partials/editableCell.html", []).run(["$templateCache", function($templateCache) {
